@@ -6,6 +6,9 @@
     <string name="Category2">CATEGORY 2</string>
     <string name="Category3">CATEGORY 3</string>
     <string name="SeeAll">SEE ALL</string>
+    <string name="location_permission_denied">location_permission_denied</string>
+    <string name="permission_required_toast">permission_required_toast</string>
+    <string name="permission_rationale_location">permission_rationale_location</string>
 
 
 </resources>
