@@ -14,12 +14,12 @@
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/continue_quest"
             style="@style/MainButton.background"
             android:layout_width="@dimen/button_weight"
             android:layout_height="@dimen/button_hight"
-            android:layout_above="@+id/button2"
-            android:layout_alignStart="@+id/button2"
+            android:layout_above="@+id/start_new"
+            android:layout_alignStart="@+id/start_new"
             android:layout_marginBottom="40dp"
             android:text="@string/Continue"
             android:layout_centerHorizontal="true"
@@ -27,7 +27,7 @@
             />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/start_new"
             style="@style/MainButton.background"
             android:layout_width="@dimen/button_weight"
             android:layout_height="@dimen/button_hight"
