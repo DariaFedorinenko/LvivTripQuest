@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="button_weight">242dp</dimen>
-    <dimen name="button_hight">40dp</dimen>
-    <dimen name="text_size">20sp</dimen>
-    <dimen name="between_icon_category">12dp</dimen>
-    <dimen name="top_category">6dp</dimen>
-    <dimen name="size_icon">24dp</dimen>
+
+    <dimen name="image_view_height">60dp</dimen>
+    <dimen name="image_view_width">93dp</dimen>
+    <dimen name="layout_marginStart">8dp</dimen>
+    <dimen name="layout_marginTop">8dp</dimen>
+    <dimen name="layout_marginRight">8dp</dimen>
 
 </resources>
