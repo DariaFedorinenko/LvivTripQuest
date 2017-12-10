@@ -31,6 +31,7 @@
             android:layout_above="@+id/button2"
             android:layout_alignStart="@+id/button2"
             android:layout_marginBottom="40dp"
+            android:textColor="#FFFFFF"
             android:text="@string/Continue"
             android:layout_centerHorizontal="true"
             android:elevation="56dp"
@@ -42,6 +43,7 @@
             android:layout_width="@dimen/button_weight"
             android:layout_height="@dimen/button_hight"
             android:layout_alignParentBottom="true"
+            android:textColor="#FFFFFF"
             android:layout_centerHorizontal="true"
             android:text="@string/Start_new"
             android:layout_marginBottom="66dp"/>

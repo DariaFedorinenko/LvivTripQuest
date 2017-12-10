@@ -29,6 +29,9 @@
         <activity
             android:name=".ChooseCategory">
         </activity>
+        <activity
+            android:name=".ActivityChooseLevel">
+        </activity>
     </application>
 
 </manifest>

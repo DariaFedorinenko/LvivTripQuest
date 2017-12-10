@@ -13,8 +13,10 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -33,14 +35,14 @@ import java.io.IOException;
 import java.util.List;
 
 
-public class ChooseCategory extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
+public class ChooseCategory extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener, View.OnClickListener {
 
     private GoogleMap mMap;
     private LocationManager locationManager;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private boolean mPermissionDenied = false;
 
-    @SuppressLint("MissingPermission")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,10 @@ public class ChooseCategory extends AppCompatActivity implements OnMapReadyCallb
         mapFragment.getMapAsync(this);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+                return;
+            }
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
@@ -117,12 +123,21 @@ public class ChooseCategory extends AppCompatActivity implements OnMapReadyCallb
             });
             return;
         }
-        startNewButton1();
-        startNewButton2();
-        startNewButton3();
-        startNewButton4();
+        LinearLayout category1;
+        LinearLayout category2;
+        LinearLayout category3;
+        LinearLayout seeall;
+        category1 = (LinearLayout) findViewById(R.id.category1);
+        category1.setOnClickListener(this);
+        category2 = (LinearLayout) findViewById(R.id.category1);
+        category2.setOnClickListener(this);
+        category3 = (LinearLayout) findViewById(R.id.category1);
+        category3.setOnClickListener(this);
+        seeall = (LinearLayout) findViewById(R.id.category1);
+        seeall.setOnClickListener(this);
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap map) {
         mMap = map;
@@ -134,10 +149,32 @@ public class ChooseCategory extends AppCompatActivity implements OnMapReadyCallb
         }
         mMap.setOnMyLocationButtonClickListener(this);
         mMap.setOnMyLocationClickListener(this);
+        mMap.setMyLocationEnabled(true);
 
     }
 
-
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.category1:
+                Intent intent1 = new Intent(this, ActivityChooseLevel.class);
+                startActivity(intent1);
+                break;
+            case R.id.category2:
+                Intent intent2 = new Intent(this, ActivityChooseLevel.class);
+                startActivity(intent2);
+                break;
+            case R.id.category3:
+                Intent intent3 = new Intent(this, ActivityChooseLevel.class);
+                startActivity(intent3);
+                break;
+            case R.id.seeall:
+                Intent intent4 = new Intent(this, ActivityChooseLevel.class);
+                startActivity(intent4);
+                break;
+            default:
+                break;
+        }
+    }
 
     @Override
     public boolean onMyLocationButtonClick() {
@@ -171,44 +208,8 @@ public class ChooseCategory extends AppCompatActivity implements OnMapReadyCallb
                 .newInstance(true).show(getSupportFragmentManager(), "dialog");
     }
 
-    private void startNewButton1(){
-        LinearLayout Category1 = (LinearLayout) findViewById(R.id.category1);
-        Category1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChooseCategory.this, ActivityChooseLevel.class));
-            }
-        });
-    }
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
 
-    private void startNewButton2(){
-        LinearLayout Category2 = (LinearLayout) findViewById(R.id.category2);
-        Category2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChooseCategory.this, ActivityChooseLevel.class));
-            }
-        });
     }
-
-    private void startNewButton3(){
-        LinearLayout Category2 = (LinearLayout) findViewById(R.id.category3);
-        Category2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChooseCategory.this, ActivityChooseLevel.class));
-            }
-        });
-    }
-
-    private void startNewButton4(){
-        LinearLayout Category2 = (LinearLayout) findViewById(R.id.seeall);
-        Category2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChooseCategory.this, ActivityChooseLevel.class));
-            }
-        });
-    }
-
 }
