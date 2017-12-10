@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="@dimen/text_width"
+        android:layout_height="@dimen/text_height"
+        android:textSize="@dimen/size_Level"
+        android:textColor="@color/colorText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/margin_Start"
+        android:layout_marginTop="@dimen/margin_Top"
+        android:text="@string/level_1"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="@dimen/between_level_and_Image"
+        android:id="@+id/linearLayout">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:contentDescription="@string/todo"
+            android:layout_marginStart="@dimen/margin_Start"/>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:layout_marginStart="@dimen/left"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginTop="@dimen/between_Image_and_name"
+        android:text=""
+        android:layout_marginStart="@dimen/margin_Start"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/size_name"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginStart="@dimen/margin_Start"
+        android:text=""
+        android:textSize="@dimen/size_km"
+        android:textColor="@color/colorText"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="@dimen/text_width"
+        android:layout_height="@dimen/text_height"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="@dimen/margin_Top"
+        android:text="@string/level_2"
+        android:textSize="@dimen/size_Level"
+        android:textColor="@color/colorText"
+        android:layout_marginStart="@dimen/margin_Start"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="@dimen/between_level_and_Image"
+        android:id="@+id/linearLayout2">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:contentDescription="@string/todo"
+            android:layout_marginStart="@dimen/margin_Start"/>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:layout_marginStart="@dimen/left"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_marginTop="@dimen/between_Image_and_name"
+        android:text=""
+        android:layout_marginStart="@dimen/margin_Start"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/size_name"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView5"
+        android:layout_marginStart="@dimen/margin_Start"
+        android:text=""
+        android:textSize="@dimen/size_km"
+        android:textColor="@color/colorText"/>
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="@dimen/text_width"
+        android:layout_height="@dimen/text_height"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="@dimen/margin_Top"
+        android:text="@string/level_3"
+        android:textSize="@dimen/size_Level"
+        android:textColor="@color/colorText"
+        android:layout_marginStart="@dimen/margin_Start"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView7"
+        android:layout_marginTop="@dimen/between_level_and_Image"
+        android:id="@+id/linearLayout3">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:contentDescription="@string/todo"
+            android:layout_marginStart="@dimen/margin_Start"/>
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:layout_marginStart="@dimen/left"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_marginTop="@dimen/between_Image_and_name"
+        android:text=""
+        android:layout_marginStart="@dimen/margin_Start"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/size_name"/>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView8"
+        android:layout_marginStart="@dimen/margin_Start"
+        android:text=""
+        android:textSize="@dimen/size_km"
+        android:textColor="@color/colorText"/>
+
+</RelativeLayout>
