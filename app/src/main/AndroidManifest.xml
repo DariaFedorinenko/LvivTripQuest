@@ -30,6 +30,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Balance">
+        </activity>
+        <activity
             android:name=".ActivityChooseLevel">
         </activity>
         <activity
