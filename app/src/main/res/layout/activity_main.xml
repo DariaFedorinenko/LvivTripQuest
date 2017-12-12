@@ -22,9 +22,7 @@
             android:layout_alignStart="@+id/button2"
             android:layout_marginBottom="40dp"
             android:text="@string/Continue"
-            android:layout_centerHorizontal="true"
-            android:elevation="56dp"
-            />
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:id="@+id/button2"
@@ -34,7 +32,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="@string/Start_new"
-            android:layout_marginBottom="66dp"/>
+            android:layout_marginBottom="60dp"/>
 
     </RelativeLayout>
 
