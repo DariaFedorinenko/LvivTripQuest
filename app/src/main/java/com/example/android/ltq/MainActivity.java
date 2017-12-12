@@ -232,8 +232,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private void buttonsFirstDisappear(){
         final View SecondScreen= findViewById(R.id.screen2);
-        final Button ContinueQuest= (Button) findViewById(R.id.button1);
-        final Button ChooseCategory = (Button) findViewById(R.id.button2);
+        final Button ContinueQuest= (Button) findViewById(R.id.continue_quest);
+        final Button ChooseCategory = (Button) findViewById(R.id.start_new);
         ChooseCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
