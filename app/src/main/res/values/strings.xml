@@ -16,6 +16,9 @@
     <string name="level_1">level 1</string>
     <string name="level_2">level 2</string>
     <string name="level_3">level 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
 
 
 </resources>
