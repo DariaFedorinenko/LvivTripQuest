@@ -30,13 +30,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
-                android:id="@+id/category1"
+                android:id="@+id/button1"
                 android:layout_width="@dimen/button_weight"
                 android:layout_height="@dimen/button_hight"
                 style="@style/MainButton.background"
                 android:layout_centerHorizontal="true"
-                android:layout_above="@+id/category2"
-                android:layout_alignStart="@+id/category2"
+                android:layout_above="@+id/button2"
+                android:layout_alignStart="@+id/button2"
                 android:layout_marginBottom="20dp">
 
                 <ImageView
@@ -44,7 +44,7 @@
                     android:layout_height="@dimen/size_icon"
                     android:layout_marginStart="50dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/shopping"/>
+                    android:background="@drawable/ic_shop"/>
 
                 <TextView
                     style="@style/Text_categoty"
@@ -57,13 +57,13 @@
 
 
             <LinearLayout
-                android:id="@+id/category2"
+                android:id="@+id/button2"
                 android:layout_width="@dimen/button_weight"
                 android:layout_height="@dimen/button_hight"
                 style="@style/MainButton.background"
                 android:layout_centerHorizontal="true"
-                android:layout_above="@+id/category3"
-                android:layout_alignStart="@+id/category3"
+                android:layout_above="@+id/button3"
+                android:layout_alignStart="@+id/button3"
                 android:layout_marginBottom="20dp">
 
                 <ImageView
@@ -71,7 +71,7 @@
                     android:layout_height="@dimen/size_icon"
                     android:layout_marginStart="50dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/star"/>
+                    android:background="@drawable/ic_star"/>
 
                 <TextView
                     style="@style/Text_categoty"
@@ -83,13 +83,13 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/category3"
+                android:id="@+id/button3"
                 android:layout_width="@dimen/button_weight"
                 android:layout_height="@dimen/button_hight"
                 style="@style/MainButton.background"
                 android:layout_centerHorizontal="true"
-                android:layout_above="@+id/seeall"
-                android:layout_alignStart="@+id/seeall"
+                android:layout_above="@+id/button4"
+                android:layout_alignStart="@+id/button4"
                 android:layout_marginBottom="20dp">
 
                 <ImageView
@@ -97,7 +97,7 @@
                     android:layout_height="@dimen/size_icon"
                     android:layout_marginStart="50dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/home"/>
+                    android:background="@drawable/ic_norm_home"/>
 
                 <TextView
                     style="@style/Text_categoty"
@@ -109,13 +109,13 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/seeall"
+                android:id="@+id/button4"
                 android:layout_width="@dimen/button_weight"
                 android:layout_height="@dimen/button_hight"
                 style="@style/MainButton.background"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="25dp">
+                android:layout_marginBottom="60dp">
 
 
                 <TextView
@@ -129,27 +129,26 @@
             </LinearLayout>
         </RelativeLayout>
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/continue_quest"
             style="@style/MainButton.background"
             android:layout_width="@dimen/button_weight"
             android:layout_height="@dimen/button_hight"
-            android:layout_above="@+id/button2"
-            android:layout_alignStart="@+id/button2"
+            android:layout_above="@+id/start_new"
+            android:layout_alignStart="@+id/start_new"
             android:layout_marginBottom="40dp"
             android:text="@string/Continue"
-            android:layout_centerHorizontal="true"
-            android:elevation="56dp"
-            />
+            android:layout_centerHorizontal="true" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/start_new"
             style="@style/MainButton.background"
             android:layout_width="@dimen/button_weight"
             android:layout_height="@dimen/button_hight"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="@string/Start_new"
-            android:layout_marginBottom="66dp"/>
+            android:layout_marginBottom="60dp"/>
+
 
     </RelativeLayout>
 
