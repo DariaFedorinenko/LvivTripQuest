@@ -30,10 +30,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ChooseCategory">
+            android:name=".ActivityChooseLevel">
         </activity>
         <activity
-            android:name=".ActivityChooseLevel">
+            android:name=".QuestScreen">
         </activity>
     </application>
 
