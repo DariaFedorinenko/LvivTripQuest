@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private LocationManager locationManager;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private boolean mPermissionDenied = false;
-    private LinearLayout Cafes;
+    private boolean CameraOnMyPosition = true;
 
     @SuppressLint("MissingPermission")
     @Override
@@ -86,7 +86,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
                         String str = addressList.get(0).getLocality() + ",";
                         str += addressList.get(0).getCountryName();
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                        if (CameraOnMyPosition) {
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                            CameraOnMyPosition = false;
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -119,7 +122,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
                         String str = addressList.get(0).getLocality() + ",";
                         str += addressList.get(0).getCountryName();
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                        if (CameraOnMyPosition) {
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                            CameraOnMyPosition = false;
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
