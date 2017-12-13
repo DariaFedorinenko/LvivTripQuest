@@ -113,55 +113,6 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
     private static final LatLng secretPlace1 = new LatLng(49.844136, 24.024739);
     private static final LatLng secretPlace2 = new LatLng(49.839874, 24.037288);
 
-    private static final LatLng point1 = new LatLng(49.84392, 24.02659);
-    private static final LatLng point2 = new LatLng(49.8431, 24.03162);
-    private static final LatLng point3 = new LatLng(49.84295, 24.03192);
-    private static final LatLng point4 = new LatLng(49.8417, 24.03275);
-    private static final LatLng point5 = new LatLng(49.841123, 24.033096);
-    private static final LatLng point6 = new LatLng(49.84097, 24.03318);
-    private static final LatLng point7 = new LatLng(49.84095, 24.03453);
-    private static final LatLng point8 = new LatLng(49.84113, 24.03451);
-    private static final LatLng point9 = new LatLng(49.84152, 24.03523);
-    private static final LatLng point10 = new LatLng(49.84129, 24.03227);
-    private static final LatLng point11 = new LatLng(49.83994, 24.0294);
-    private static final LatLng point12 = new LatLng(49.840585, 24.025972);
-    private static final LatLng point13 = new LatLng(49.83918, 24.02515);
-
-    private static final LatLng line1ToMarker2 = new LatLng(49.843791, 24.026820);
-    private static final LatLng line2ToMarker2 = new LatLng(49.843828, 24.028347);
-    private static final LatLng line3ToMarker2 = new LatLng(49.842950, 24.028705);
-    private static final LatLng line4ToMarker2 = new LatLng(49.843149, 24.031523);
-    private static final LatLng line1ToMarker3 = new LatLng(49.843166, 24.031690);
-    private static final LatLng line2ToMarker3 = new LatLng(49.843199, 24.032020);
-    private static final LatLng line3ToMarker3 = new LatLng(49.843054, 24.032079);
-    private static final LatLng line1ToMarker4 = new LatLng(49.842937, 24.032126);
-    private static final LatLng line2ToMarker4 = new LatLng(49.842491, 24.032265);
-    private static final LatLng line3ToMarker4 = new LatLng(49.841746, 24.032627);
-    private static final LatLng line1ToMarker5 = new LatLng(49.841140, 24.033022);
-    private static final LatLng line1ToMarker6 = new LatLng(49.841094, 24.033048);
-    private static final LatLng line2ToMarker6 = new LatLng(49.840989, 24.033104);
-    private static final LatLng line1ToMarker7 = new LatLng(49.840941, 24.033128);
-    private static final LatLng line2ToMarker7 = new LatLng(49.840770, 24.033220);
-    private static final LatLng line3ToMarker7 = new LatLng(49.841035, 24.034407);
-    private static final LatLng line1ToMarker9 = new LatLng(49.841101, 24.034635);
-    private static final LatLng line2ToMarker9 = new LatLng(49.841229, 24.035122);
-    private static final LatLng line3ToMarker9 = new LatLng(49.841559, 24.034921);
-    private static final LatLng line4ToMarker9 = new LatLng(49.841579, 24.035101);
-    private static final LatLng line1ToMarker10 = new LatLng(49.841979, 24.035057);
-    private static final LatLng line2ToMarker10 = new LatLng(49.841460, 24.032308);
-    private static final LatLng line1ToMarker11 = new LatLng(49.841411, 24.032025);
-    private static final LatLng line2ToMarker11 = new LatLng(49.840889, 24.029860);
-    private static final LatLng line3ToMarker11 = new LatLng(49.840063, 24.030180);
-    private static final LatLng line4ToMarker11 = new LatLng(49.839807, 24.030012);
-    private static final LatLng line5ToMarker11 = new LatLng(49.839765, 24.029501);
-    private static final LatLng line1ToMarker12 = new LatLng(49.840662, 24.028726);
-    private static final LatLng line2ToMarker12 = new LatLng(49.840444, 24.027704);
-    private static final LatLng line3ToMarker12 = new LatLng(49.840040, 24.026830);
-    private static final LatLng line4ToMarker12 = new LatLng(49.840576, 24.026121);
-    private static final LatLng line1ToMarker13 = new LatLng(49.839197, 24.025300);
-    private static final LatLng secretPlace1 = new LatLng(49.844136, 24.024739);
-    private static final LatLng secretPlace2 = new LatLng(49.839874, 24.037288);
-
     @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -184,7 +135,7 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                         String str = addressList.get(0).getLocality() + ",";
                         str += addressList.get(0).getCountryName();
                         if (CameraOnMyPosition) {
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f));
                             CameraOnMyPosition = false;
                         }
                     } catch (IOException e) {
@@ -220,7 +171,7 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                         String str = addressList.get(0).getLocality() + ",";
                         str += addressList.get(0).getCountryName();
                         if (CameraOnMyPosition) {
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f));
                             CameraOnMyPosition = false;
                         }
                     } catch (IOException e) {
