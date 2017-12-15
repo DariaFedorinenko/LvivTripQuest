@@ -32,6 +32,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private LocationManager locationManager;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private boolean mPermissionDenied = false;
-    private LinearLayout Cafes;
+    private boolean CameraOnMyPosition = true;
 
     @SuppressLint("MissingPermission")
     @Override
@@ -86,7 +87,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
                         String str = addressList.get(0).getLocality() + ",";
                         str += addressList.get(0).getCountryName();
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                        if (CameraOnMyPosition) {
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                            CameraOnMyPosition = false;
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -119,7 +123,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
                         String str = addressList.get(0).getLocality() + ",";
                         str += addressList.get(0).getCountryName();
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                        if (CameraOnMyPosition) {
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                            CameraOnMyPosition = false;
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -259,7 +266,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        if (id== R.id.nav_balance){
+            startActivity(new Intent(MainActivity.this, Balance.class));
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

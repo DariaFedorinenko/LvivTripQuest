@@ -26,6 +26,13 @@
     <string name="_2km">2km</string>
     <string name="sweet_things">Sweet Things</string>
     <string name="_3km">3km</string>
-
+    <string name="Current_balance">Current balance</string>
+    <string name="buy">Buy</string>
+    <string name="point_">534</string>
+    <string name="dollar_">1</string>
+    <string name="point">Point</string>
+    <string name="dollar">Dollar</string>
+    <string name="numbers">23463</string>
+    <string name="title">Title</string>
 
 </resources>

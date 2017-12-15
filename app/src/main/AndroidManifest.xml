@@ -35,6 +35,9 @@
         <activity
             android:name=".QuestScreen">
         </activity>
+        <activity
+            android:name=".Balance">
+        </activity>
     </application>
 
 </manifest>
