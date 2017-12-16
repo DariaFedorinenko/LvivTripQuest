@@ -20,6 +20,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
 
 import java.io.IOException;
@@ -40,6 +41,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.content.res.Resources;
@@ -63,6 +65,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private boolean mPermissionDenied = false;
     private boolean CameraOnMyPosition = true;
+    private LatLngBounds.Builder builder = new LatLngBounds.Builder();
+    private LatLng latLng;
 
     private static final LatLng point1 = new LatLng(49.84392, 24.02659);
     private static final LatLng point2 = new LatLng(49.8431, 24.03162);
@@ -77,6 +81,19 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
     private static final LatLng point11 = new LatLng(49.83994, 24.0294);
     private static final LatLng point12 = new LatLng(49.840585, 24.025972);
     private static final LatLng point13 = new LatLng(49.83918, 24.02515);
+    private Marker marker1;
+    private Marker marker2;
+    private Marker marker3;
+    private Marker marker4;
+    private Marker marker5;
+    private Marker marker6;
+    private Marker marker7;
+    private Marker marker8;
+    private Marker marker9;
+    private Marker marker10;
+    private Marker marker11;
+    private Marker marker12;
+    private Marker marker13;
 
     private static final LatLng line1ToMarker2 = new LatLng(49.843791, 24.026820);
     private static final LatLng line2ToMarker2 = new LatLng(49.843828, 24.028347);
@@ -113,7 +130,6 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
     private static final LatLng secretPlace1 = new LatLng(49.844136, 24.024739);
     private static final LatLng secretPlace2 = new LatLng(49.839874, 24.037288);
 
-    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,20 +138,28 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        return;
+        }
         if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
                     double latitude = location.getLatitude();
                     double longitude = location.getLongitude();
-                    LatLng latLng = new LatLng(latitude, longitude);
+                    latLng = new LatLng(latitude, longitude);
                     Geocoder geocoder = new Geocoder(getApplicationContext());
                     try {
                         List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
                         String str = addressList.get(0).getLocality() + ",";
                         str += addressList.get(0).getCountryName();
+                        IncludeMarkersToCamera(builder);
+                        LatLngBounds bounds = builder.build();
+                        int width = getResources().getDisplayMetrics().widthPixels;
+                        int height = getResources().getDisplayMetrics().heightPixels;
+                        int padding = (int) (width * 0.10);
                         if (CameraOnMyPosition) {
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, width, height, padding));
                             CameraOnMyPosition = false;
                         }
                     } catch (IOException e) {
@@ -170,8 +194,13 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                         List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
                         String str = addressList.get(0).getLocality() + ",";
                         str += addressList.get(0).getCountryName();
+                        IncludeMarkersToCamera(builder);
+                        LatLngBounds bounds = builder.build();
+                        int width = getResources().getDisplayMetrics().widthPixels;
+                        int height = getResources().getDisplayMetrics().heightPixels;
+                        int padding = (int) (width * 0.10);
                         if (CameraOnMyPosition) {
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, width, height, padding));
                             CameraOnMyPosition = false;
                         }
                     } catch (IOException e) {
@@ -264,79 +293,79 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                 .image(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(test)))
                 .position(secretPlace2, 340f, 340f));
 
-        mMap.addMarker(new MarkerOptions()
+        marker1 = mMap.addMarker(new MarkerOptions()
                 .position(point1)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 2);
         distanceBetweenPoint.setText("445m");
-        mMap.addMarker(new MarkerOptions()
+        marker2 = mMap.addMarker(new MarkerOptions()
                 .position(point2)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 3);
         distanceBetweenPoint.setText("55m");
-        mMap.addMarker(new MarkerOptions()
+        marker3 = mMap.addMarker(new MarkerOptions()
                 .position(point3)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 4);
         distanceBetweenPoint.setText("150m");
-        mMap.addMarker(new MarkerOptions()
+        marker4 = mMap.addMarker(new MarkerOptions()
                 .position(point4)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 5);
         distanceBetweenPoint.setText("80m");
-        mMap.addMarker(new MarkerOptions()
+        marker5 = mMap.addMarker(new MarkerOptions()
                 .position(point5)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 6);
         distanceBetweenPoint.setText("20m");
-        mMap.addMarker(new MarkerOptions()
+        marker6 = mMap.addMarker(new MarkerOptions()
                 .position(point6)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 7);
         distanceBetweenPoint.setText("120m");
-        mMap.addMarker(new MarkerOptions()
+        marker7 = mMap.addMarker(new MarkerOptions()
                 .position(point7)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 8);
         distanceBetweenPoint.setText("5m");
-        mMap.addMarker(new MarkerOptions()
+        marker8 = mMap.addMarker(new MarkerOptions()
                 .position(point8)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 9);
         distanceBetweenPoint.setText("90m");
-        mMap.addMarker(new MarkerOptions()
+        marker9 = mMap.addMarker(new MarkerOptions()
                 .position(point9)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 10);
         distanceBetweenPoint.setText("290m");
-        mMap.addMarker(new MarkerOptions()
+        marker10 = mMap.addMarker(new MarkerOptions()
                 .position(point10)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 11);
         distanceBetweenPoint.setText("425m");
-        mMap.addMarker(new MarkerOptions()
+        marker11 = mMap.addMarker(new MarkerOptions()
                 .position(point11)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 12);
         distanceBetweenPoint.setText("320m");
-        mMap.addMarker(new MarkerOptions()
+        marker12 = mMap.addMarker(new MarkerOptions()
                 .position(point12)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 13);
         distanceBetweenPoint.setText("220m");
-        mMap.addMarker(new MarkerOptions()
+        marker13 = mMap.addMarker(new MarkerOptions()
                 .position(point13)
                 .anchor(0.5f, 0.5f)
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
@@ -413,6 +442,26 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                 .width(11)
                 .jointType(BEVEL)
                 .color(Color.rgb(145, 121, 241)));
+    }
+
+    public LatLngBounds.Builder IncludeMarkersToCamera(LatLngBounds.Builder builder)
+    {
+        builder.include(marker1.getPosition());
+        builder.include(marker2.getPosition());
+        builder.include(marker3.getPosition());
+        builder.include(marker4.getPosition());
+        builder.include(marker5.getPosition());
+        builder.include(marker6.getPosition());
+        builder.include(marker7.getPosition());
+        builder.include(marker8.getPosition());
+        builder.include(marker9.getPosition());
+        builder.include(marker10.getPosition());
+        builder.include(marker11.getPosition());
+        builder.include(marker12.getPosition());
+        builder.include(marker13.getPosition());
+        builder.include(latLng);
+
+        return builder;
     }
 
 }
