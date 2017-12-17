@@ -36,7 +36,9 @@
             android:scrollbars="none" >
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+
+                >
                 <ImageView
                     android:id="@+id/my_recycler_view1"
                     android:layout_width="@dimen/image_width"
@@ -52,6 +54,15 @@
                     android:layout_marginStart="@dimen/left"
                     android:contentDescription="@string/todo"
                     android:background="@drawable/lviv1"/>
+
+                <ImageView
+                    android:id="@+id/my_recycler_view22"
+                    android:layout_width="@dimen/image_width"
+                    android:layout_height="@dimen/image_height"
+                    android:layout_marginStart="@dimen/left"
+                    android:contentDescription="@string/todo"
+                    android:background="@drawable/lviv1"
+                    android:layout_marginEnd="@dimen/margin_Start"/>
             </LinearLayout>
         </HorizontalScrollView>
     </LinearLayout>
@@ -124,6 +135,15 @@
                     android:layout_marginStart="@dimen/left"
                     android:contentDescription="@string/todo"
                     android:background="@drawable/themed_cafes"/>
+
+                <ImageView
+                    android:id="@+id/my_recycler_view44"
+                    android:layout_width="@dimen/image_width"
+                    android:layout_height="@dimen/image_height"
+                    android:layout_marginStart="@dimen/left"
+                    android:contentDescription="@string/todo"
+                    android:background="@drawable/themed_cafes"
+                    android:layout_marginEnd="@dimen/margin_Start"/>
             </LinearLayout>
         </HorizontalScrollView>
     </LinearLayout>
@@ -192,6 +212,15 @@
                     android:layout_marginStart="@dimen/left"
                     android:contentDescription="@string/todo"
                     android:background="@drawable/sweet_things"/>
+
+                <ImageView
+                    android:id="@+id/my_recycler_view66"
+                    android:layout_width="@dimen/image_width"
+                    android:layout_height="@dimen/image_height"
+                    android:layout_marginStart="@dimen/left"
+                    android:contentDescription="@string/todo"
+                    android:background="@drawable/sweet_things"
+                    android:layout_marginEnd="@dimen/margin_Start"/>
             </LinearLayout>
         </HorizontalScrollView>
     </LinearLayout>

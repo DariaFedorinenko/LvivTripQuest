@@ -2,6 +2,7 @@ package com.example.android.ltq;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.location.Address;
@@ -11,6 +12,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
@@ -60,6 +62,7 @@ import android.content.Context;
 
 public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
 
+    private BottomSheetBehavior mBottomSheetBehavior1;
     private GoogleMap mMap;
     private LocationManager locationManager;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
@@ -134,6 +137,11 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quest_screen);
+        final View bottomSheet1 = findViewById(R.id.bottom_sheet1);
+        mBottomSheetBehavior1 = BottomSheetBehavior.from(bottomSheet1);
+        mBottomSheetBehavior1.setHideable(true);
+        mBottomSheetBehavior1.setPeekHeight(300);
+        mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_HIDDEN);
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -227,6 +235,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
         }
     }
 
+
+
     @Override
     public void onMapReady(GoogleMap map) {
         mMap = map;
@@ -246,6 +256,7 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
         uiSettings.setMapToolbarEnabled(false);
         drawMarkers();
         drawLines();
+
     }
 
     @Override
@@ -296,79 +307,146 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
         marker1 = mMap.addMarker(new MarkerOptions()
                 .position(point1)
                 .anchor(0.5f, 0.5f)
+                .title("point1")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 2);
         distanceBetweenPoint.setText("445m");
         marker2 = mMap.addMarker(new MarkerOptions()
                 .position(point2)
                 .anchor(0.5f, 0.5f)
+                .title("point2")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 3);
         distanceBetweenPoint.setText("55m");
         marker3 = mMap.addMarker(new MarkerOptions()
                 .position(point3)
                 .anchor(0.5f, 0.5f)
+                .title("point3")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 4);
         distanceBetweenPoint.setText("150m");
         marker4 = mMap.addMarker(new MarkerOptions()
                 .position(point4)
                 .anchor(0.5f, 0.5f)
+                .title("point4")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 5);
         distanceBetweenPoint.setText("80m");
         marker5 = mMap.addMarker(new MarkerOptions()
                 .position(point5)
                 .anchor(0.5f, 0.5f)
+                .title("point5")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 6);
         distanceBetweenPoint.setText("20m");
         marker6 = mMap.addMarker(new MarkerOptions()
                 .position(point6)
                 .anchor(0.5f, 0.5f)
+                .title("point6")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 7);
         distanceBetweenPoint.setText("120m");
         marker7 = mMap.addMarker(new MarkerOptions()
                 .position(point7)
                 .anchor(0.5f, 0.5f)
+                .title("point7")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 8);
         distanceBetweenPoint.setText("5m");
         marker8 = mMap.addMarker(new MarkerOptions()
                 .position(point8)
                 .anchor(0.5f, 0.5f)
+                .title("point8")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 9);
         distanceBetweenPoint.setText("90m");
         marker9 = mMap.addMarker(new MarkerOptions()
                 .position(point9)
                 .anchor(0.5f, 0.5f)
+                .title("point9")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 10);
         distanceBetweenPoint.setText("290m");
         marker10 = mMap.addMarker(new MarkerOptions()
                 .position(point10)
                 .anchor(0.5f, 0.5f)
+                .title("point10")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 11);
         distanceBetweenPoint.setText("425m");
         marker11 = mMap.addMarker(new MarkerOptions()
                 .position(point11)
                 .anchor(0.5f, 0.5f)
+                .title("point11")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 12);
         distanceBetweenPoint.setText("320m");
         marker12 = mMap.addMarker(new MarkerOptions()
                 .position(point12)
                 .anchor(0.5f, 0.5f)
+                .title("point12")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
         numberOfPoint.setText("" + 13);
         distanceBetweenPoint.setText("220m");
         marker13 = mMap.addMarker(new MarkerOptions()
                 .position(point13)
                 .anchor(0.5f, 0.5f)
+                .title("point13")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+
+                final View bottomSheet1 = findViewById(R.id.bottom_sheet1);
+                mBottomSheetBehavior1 = BottomSheetBehavior.from(bottomSheet1);
+                mBottomSheetBehavior1.setHideable(true);
+                mBottomSheetBehavior1.setPeekHeight(384);
+                mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_HIDDEN);
+
+
+
+                String title = marker.getTitle();
+                if ("point1".equals(title)) {
+                    if(mBottomSheetBehavior1.getState() == BottomSheetBehavior.STATE_EXPANDED) {
+                        mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_HIDDEN);
+
+                    }
+                    else if(mBottomSheetBehavior1.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
+                        mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_EXPANDED);
+
+                    }
+                    else if(mBottomSheetBehavior1.getState() == BottomSheetBehavior.STATE_HIDDEN) {
+                        mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    }
+                } else if ("point2".equals(title)) {
+                    startActivity(new Intent(QuestScreen.this, Balance.class));
+                } else if("point3".equals(title)){
+                    // do thing for nearby places
+                } else if ("point4".equals(title)) {
+                    // do thing for events
+                } else if("point5".equals(title)){
+                    // do thing for nearby places
+                }else if ("point6".equals(title)) {
+                    // do thing for events
+                } else if("point7".equals(title)){
+                    // do thing for nearby places
+                }else if ("point8".equals(title)) {
+                    // do thing for events
+                } else if("point9".equals(title)){
+                    // do thing for nearby places
+                }else if ("point10".equals(title)) {
+                    // do thing for events
+                } else if("point11".equals(title)){
+                    // do thing for nearby places
+                }else if ("point13".equals(title)) {
+                    // do thing for events
+                } else {
+                    return false;
+                }
+                return false;
+            }
+        });
     }
 
     public static Bitmap getBitmapFromView(View view) {

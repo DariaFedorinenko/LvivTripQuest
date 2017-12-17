@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private boolean mPermissionDenied = false;
     private boolean CameraOnMyPosition = true;
 
-
+    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
