@@ -15,7 +15,8 @@
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@drawable/oval"/>
+            android:background="@drawable/oval"
+            />
 
          <RelativeLayout
              android:layout_width="wrap_content"
@@ -110,6 +111,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="35dp"
+            android:background="@drawable/transfer"
              />
 
 

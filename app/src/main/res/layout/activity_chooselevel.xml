@@ -45,7 +45,11 @@
                     android:layout_height="@dimen/image_height"
                     android:contentDescription="@string/todo"
                     android:layout_marginStart="@dimen/margin_Start"
-                    android:background="@drawable/lviv1"/>
+                    android:background="@drawable/lviv1"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
 
                 <ImageView
                     android:id="@+id/my_recycler_view2"
@@ -53,7 +57,11 @@
                     android:layout_height="@dimen/image_height"
                     android:layout_marginStart="@dimen/left"
                     android:contentDescription="@string/todo"
-                    android:background="@drawable/lviv1"/>
+                    android:background="@drawable/lviv1"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
 
                 <ImageView
                     android:id="@+id/my_recycler_view22"
@@ -62,7 +70,11 @@
                     android:layout_marginStart="@dimen/left"
                     android:contentDescription="@string/todo"
                     android:background="@drawable/lviv1"
-                    android:layout_marginEnd="@dimen/margin_Start"/>
+                    android:layout_marginEnd="@dimen/margin_Start"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
             </LinearLayout>
         </HorizontalScrollView>
     </LinearLayout>
@@ -126,7 +138,10 @@
                     android:contentDescription="@string/todo"
                     android:layout_marginStart="@dimen/margin_Start"
                     android:background="@drawable/themed_cafes"
-                    />
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
 
                 <ImageView
                     android:id="@+id/my_recycler_view4"
@@ -134,7 +149,11 @@
                     android:layout_height="@dimen/image_height"
                     android:layout_marginStart="@dimen/left"
                     android:contentDescription="@string/todo"
-                    android:background="@drawable/themed_cafes"/>
+                    android:background="@drawable/themed_cafes"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
 
                 <ImageView
                     android:id="@+id/my_recycler_view44"
@@ -143,7 +162,11 @@
                     android:layout_marginStart="@dimen/left"
                     android:contentDescription="@string/todo"
                     android:background="@drawable/themed_cafes"
-                    android:layout_marginEnd="@dimen/margin_Start"/>
+                    android:layout_marginEnd="@dimen/margin_Start"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
             </LinearLayout>
         </HorizontalScrollView>
     </LinearLayout>
@@ -203,7 +226,11 @@
                     android:layout_height="@dimen/image_height"
                     android:contentDescription="@string/todo"
                     android:layout_marginStart="@dimen/margin_Start"
-                    android:background="@drawable/sweet_things"/>
+                    android:background="@drawable/sweet_things"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
 
                 <ImageView
                     android:id="@+id/my_recycler_view6"
@@ -211,7 +238,11 @@
                     android:layout_height="@dimen/image_height"
                     android:layout_marginStart="@dimen/left"
                     android:contentDescription="@string/todo"
-                    android:background="@drawable/sweet_things"/>
+                    android:background="@drawable/sweet_things"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
 
                 <ImageView
                     android:id="@+id/my_recycler_view66"
@@ -220,7 +251,11 @@
                     android:layout_marginStart="@dimen/left"
                     android:contentDescription="@string/todo"
                     android:background="@drawable/sweet_things"
-                    android:layout_marginEnd="@dimen/margin_Start"/>
+                    android:layout_marginEnd="@dimen/margin_Start"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
             </LinearLayout>
         </HorizontalScrollView>
     </LinearLayout>
