@@ -30,7 +30,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivityChooseLevel">
+            android:name=".ActivityChooseLevel"
+            android:label="Some name">
         </activity>
         <activity
             android:name=".QuestScreen">

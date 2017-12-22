@@ -11,10 +11,14 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -26,6 +30,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.android.gms.maps.UiSettings;
@@ -62,7 +67,7 @@ import android.content.Context;
 
 public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
 
-    private BottomSheetBehavior mBottomSheetBehavior1;
+
     private GoogleMap mMap;
     private LocationManager locationManager;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
@@ -70,6 +75,12 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
     private boolean CameraOnMyPosition = true;
     private LatLngBounds.Builder builder = new LatLngBounds.Builder();
     private LatLng latLng;
+
+    private BottomSheetBehavior mBottomSheetBehavior1;
+    private TextView questInfoTextView;
+    private Button skipButton;
+    private TextView questName;
+
 
     private static final LatLng point1 = new LatLng(49.84392, 24.02659);
     private static final LatLng point2 = new LatLng(49.8431, 24.03162);
@@ -97,6 +108,7 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
     private Marker marker11;
     private Marker marker12;
     private Marker marker13;
+    private List<Marker> listOfMarkers= new ArrayList<>();
 
     private static final LatLng line1ToMarker2 = new LatLng(49.843791, 24.026820);
     private static final LatLng line2ToMarker2 = new LatLng(49.843828, 24.028347);
@@ -137,17 +149,21 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quest_screen);
+        questInfoTextView = (TextView)findViewById(R.id.quest_info);
+        skipButton = (Button) findViewById(R.id.skip_button);
+        questName = (TextView) findViewById(R.id.quest_point_name);
         final View bottomSheet1 = findViewById(R.id.bottom_sheet1);
         mBottomSheetBehavior1 = BottomSheetBehavior.from(bottomSheet1);
         mBottomSheetBehavior1.setHideable(true);
-        mBottomSheetBehavior1.setPeekHeight(300);
+        mBottomSheetBehavior1.setPeekHeight(384);
         mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_HIDDEN);
-        SupportMapFragment mapFragment =
+
+               SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-        return;
+            return;
         }
         if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, new LocationListener() {
@@ -233,6 +249,15 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
             });
             return;
         }
+        ImageView btnMyLocation = (ImageView) ((View) mapFragment.getView().findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
+        btnMyLocation.setImageResource(R.drawable.my_location_button);
+
+        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)
+                btnMyLocation.getLayoutParams();
+        // position on right bottom
+        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
+        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 0);
+        layoutParams.setMargins(30, 20, 0, 0);
     }
 
 
@@ -255,13 +280,14 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
         UiSettings uiSettings = map.getUiSettings();
         uiSettings.setMapToolbarEnabled(false);
         drawMarkers();
+        drawSecretMarkers();
         drawLines();
 
     }
 
     @Override
     public boolean onMyLocationButtonClick() {
-
+        Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT).show();
         // Return false so that we don't consume the event and the default behavior still occurs
         // (the camera animates to the user's current position).
         return false;
@@ -296,13 +322,6 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
         TextView distanceBetweenPoint = (TextView) v.findViewById(R.id.text_text_view);
 
 
-        mMap.addGroundOverlay(new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(test)))
-                .position(secretPlace1, 340f, 340f));
-
-        mMap.addGroundOverlay(new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(test)))
-                .position(secretPlace2, 340f, 340f));
 
         marker1 = mMap.addMarker(new MarkerOptions()
                 .position(point1)
@@ -393,58 +412,82 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                 .anchor(0.5f, 0.5f)
                 .title("point13")
                 .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(v))));
+
+
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 
             @Override
             public boolean onMarkerClick(Marker marker) {
 
-                final View bottomSheet1 = findViewById(R.id.bottom_sheet1);
-                mBottomSheetBehavior1 = BottomSheetBehavior.from(bottomSheet1);
                 mBottomSheetBehavior1.setHideable(true);
-                mBottomSheetBehavior1.setPeekHeight(384);
                 mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_HIDDEN);
+
 
 
 
                 String title = marker.getTitle();
                 if ("point1".equals(title)) {
-                    if(mBottomSheetBehavior1.getState() == BottomSheetBehavior.STATE_EXPANDED) {
-                        mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_HIDDEN);
+                    questName.setText("First Point");
+                    questInfoTextView.setText("Some Info");
+
+                }else{
+                    questName.setText("Other Point");
+                    questInfoTextView.setText("Some other Info");
+                }
+
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
 
                     }
-                    else if(mBottomSheetBehavior1.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
-                        mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_EXPANDED);
+                });
 
-                    }
-                    else if(mBottomSheetBehavior1.getState() == BottomSheetBehavior.STATE_HIDDEN) {
+                Handler handler =new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
                         mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     }
-                } else if ("point2".equals(title)) {
-                    startActivity(new Intent(QuestScreen.this, Balance.class));
-                } else if("point3".equals(title)){
-                    // do thing for nearby places
-                } else if ("point4".equals(title)) {
-                    // do thing for events
-                } else if("point5".equals(title)){
-                    // do thing for nearby places
-                }else if ("point6".equals(title)) {
-                    // do thing for events
-                } else if("point7".equals(title)){
-                    // do thing for nearby places
-                }else if ("point8".equals(title)) {
-                    // do thing for events
-                } else if("point9".equals(title)){
-                    // do thing for nearby places
-                }else if ("point10".equals(title)) {
-                    // do thing for events
-                } else if("point11".equals(title)){
-                    // do thing for nearby places
-                }else if ("point13".equals(title)) {
-                    // do thing for events
+                },300);
+
+
+
+
+                return true;
+
+            }
+        });
+    }
+
+    public void drawSecretMarkers() {
+        LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View test = inflater.inflate(R.layout.secret_marker, null);
+
+        final Marker secretMarker1 = mMap.addMarker(new MarkerOptions()
+                .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(test)))
+                .anchor(0.5f, 0.5f)
+                .position(secretPlace1));
+
+        final Marker secretMarker2 = mMap.addMarker(new MarkerOptions()
+                .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(test)))
+                .anchor(0.5f, 0.5f)
+                .position(secretPlace2));
+
+        mMap.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
+            private float maxZoom = 13.8f;
+
+            @Override
+            public void onCameraIdle() {
+                float zoomLevel = mMap.getCameraPosition().zoom;
+                if (zoomLevel > maxZoom){
+                    secretMarker1.setVisible(false);
+                    secretMarker2.setVisible(false);
                 } else {
-                    return false;
+                    secretMarker1.setVisible(true);
+                    secretMarker2.setVisible(true);
                 }
-                return false;
             }
         });
     }

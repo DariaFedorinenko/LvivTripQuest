@@ -51,13 +51,16 @@ import java.io.IOException;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener, NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private GoogleMap mMap;
     private LocationManager locationManager;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private boolean mPermissionDenied = false;
     private boolean CameraOnMyPosition = true;
+    private Button ContinueQuest;
+    private Button ChooseCategory;
+    private View SecondScreen;
 
     @SuppressLint("MissingPermission")
     @Override
@@ -262,18 +265,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
     private void buttonsFirstDisappear(){
-        final View SecondScreen= findViewById(R.id.screen2);
-        final Button ContinueQuest= (Button) findViewById(R.id.continue_quest);
-        final Button ChooseCategory = (Button) findViewById(R.id.start_new);
-        ChooseCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ContinueQuest.setVisibility(View.GONE);
-                ChooseCategory.setVisibility(View.GONE);
-                SecondScreen.setVisibility(View.VISIBLE);
+         SecondScreen= findViewById(R.id.screen2);
+         ContinueQuest= (Button) findViewById(R.id.continue_quest);
+         ChooseCategory = (Button) findViewById(R.id.start_new);
 
-            }
-        });
+        ChooseCategory.setOnClickListener(this);
+
 
     }
 
@@ -299,14 +296,35 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private void startNewButton(){
         LinearLayout Cafes = (LinearLayout) findViewById(R.id.button1);
-        Cafes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, ActivityChooseLevel.class));
-            }
-        });
+        Cafes.setOnClickListener(this);
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.start_new:
+                ContinueQuest.setVisibility(View.GONE);
+                ChooseCategory.setVisibility(View.GONE);
+                SecondScreen.setVisibility(View.VISIBLE);
+                break;
+            case R.id.button1:
+                startActivityForResult(new Intent(MainActivity.this, ActivityChooseLevel.class),123);
+                break;
+        }
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case 123:
+                if(resultCode == RESULT_OK){
+                    String name = data.getStringExtra("Name");
+                    Toast.makeText(this, "We got some Info:"+name,
+                            Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
+    }
 }
