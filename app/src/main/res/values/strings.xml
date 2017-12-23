@@ -14,4 +14,13 @@
     <string name="dollar">Dollar</string>
     <string name="numbers">23463</string>
     <string name="title">Title</string>
+    <string name="some_text">Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit,sed
+
+        do eiusmod tempor incididunt
+        ut labore et dolore magna wirl
+        aliqua. Up exlaborum incididunt
+        quis </string>
+    <string name="upload_photo">Upload photo</string>
+
 </resources>

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.ltq.MainActivity">
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,9 +23,11 @@
             android:layout_height="@dimen/button_hight"
             android:layout_above="@+id/start_new"
             android:layout_alignStart="@+id/start_new"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="22dp"
+            android:elevation="3dp"
             android:text="@string/Continue"
-            android:layout_centerHorizontal="true" />
+            android:textColor="#D8D8D8"
+            android:translationZ="3dp" />
 
         <Button
             android:id="@+id/start_new"
@@ -31,9 +36,14 @@
             android:layout_height="@dimen/button_hight"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:elevation="16dp"
             android:text="@string/Start_new"
-            android:layout_marginBottom="60dp"/>
+            android:textColor="#D8D8D8"
+            android:transformPivotX="5dp"
+            android:transformPivotY="10dp"
+            android:translationZ="10dp" />
 
     </RelativeLayout>
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
