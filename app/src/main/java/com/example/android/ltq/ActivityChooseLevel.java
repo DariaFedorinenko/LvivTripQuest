@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -46,8 +47,20 @@ public class ActivityChooseLevel extends AppCompatActivity {
         easyRecyclerView.setAdapter(easyQuestItemAdapter);
         prepareQuestData();
         startNewButton();
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+        if(id==R.id.home){
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     private void prepareQuestData() {
         for (int i = 0; i < 5; i++) {

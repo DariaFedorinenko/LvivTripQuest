@@ -26,7 +26,9 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private Button ContinueQuest;
     private Button ChooseCategory;
     private View SecondScreen;
+    private ActionBarDrawerToggle toggle;
 
     @SuppressLint("MissingPermission")
     @Override
@@ -70,10 +73,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -173,6 +173,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             });
             return;
         }
+        ImageView btnMyLocation = (ImageView) ((View) mapFragment.getView().findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
+        btnMyLocation.setImageResource(R.drawable.my_location_button);
+
+        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)
+                btnMyLocation.getLayoutParams();
+        // position on right bottom
+        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
+        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 0);
+        layoutParams.setMargins(30, 20, 0, 0);
 
     }
 
@@ -253,17 +262,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-
     private void buttonsFirstDisappear(){
          SecondScreen= findViewById(R.id.screen2);
          ContinueQuest= (Button) findViewById(R.id.continue_quest);
@@ -304,6 +302,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.start_new:
+                getSupportActionBar().setDisplayShowHomeEnabled(true);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 ContinueQuest.setVisibility(View.GONE);
                 ChooseCategory.setVisibility(View.GONE);
                 SecondScreen.setVisibility(View.VISIBLE);
