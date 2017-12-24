@@ -26,7 +26,9 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -173,6 +175,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             });
             return;
         }
+        ImageView btnMyLocation = (ImageView) ((View) mapFragment.getView().findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
+        btnMyLocation.setImageResource(R.drawable.my_location_button);
+
+        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)
+                btnMyLocation.getLayoutParams();
+        // position on right bottom
+        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
+        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 0);
+        layoutParams.setMargins(30, 20, 0, 0);
 
     }
 
