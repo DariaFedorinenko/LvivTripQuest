@@ -8,4 +8,7 @@
     <color name="colorBackground">#E6FFFFFF</color>
     <color name="colorTextGray">#4A4A4A</color>
     <color name="colorBottomSheet">#F27D7D7D</color>
+    <color name="graylight">#fafafa</color>
+    <color name="startblue">#09c6df</color>
+    <color name="endblue">#0bcce6</color>
 </resources>

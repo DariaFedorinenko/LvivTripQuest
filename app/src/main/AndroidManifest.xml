@@ -39,6 +39,9 @@
         <activity
             android:name=".Balance">
         </activity>
+        <activity
+            android:name=".profile_ui">
+        </activity>
     </application>
 
 </manifest>
