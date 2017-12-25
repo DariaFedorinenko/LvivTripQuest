@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                             return;
                         }
                         if (CameraOnMyPosition) {
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
                             CameraOnMyPosition = false;
                         }
                     } catch (IOException e) {
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         String str = addressList.get(0).getLocality() + ",";
                         str += addressList.get(0).getCountryName();
                         if (CameraOnMyPosition) {
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
                             CameraOnMyPosition = false;
                         }
                     } catch (IOException e) {
