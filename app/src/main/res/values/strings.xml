@@ -2,7 +2,7 @@
     <string name="app_name">LTQ</string>
     <string name="Continue">Continue</string>
     <string name="Start_new">Start new</string>
-    <string name="Category1">CATEGORY 1</string>
+    <string name="Category1">CAFES</string>
     <string name="Category2">CATEGORY 2</string>
     <string name="Category3">CATEGORY 3</string>
     <string name="SeeAll">SEE ALL</string>
@@ -35,5 +35,6 @@
     <string name="numbers">23463</string>
     <string name="title">Title</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="_2.2km">2.2 km</string>
 
 </resources>

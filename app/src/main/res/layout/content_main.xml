@@ -42,7 +42,7 @@
                 <ImageView
                     android:layout_width="@dimen/size_icon"
                     android:layout_height="@dimen/size_icon"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="64dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/ic_shop"/>
 
@@ -50,7 +50,7 @@
                     style="@style/Text_categoty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/between_icon_category"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="@dimen/top_category"
                     android:text="@string/Category1" />
             </LinearLayout>
@@ -64,7 +64,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_above="@+id/button3"
                 android:layout_alignStart="@+id/button3"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorButtonWithoutAction">
 
                 <ImageView
                     android:layout_width="@dimen/size_icon"
@@ -79,7 +80,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/between_icon_category"
                     android:layout_marginTop="@dimen/top_category"
-                    android:text="@string/Category2" />
+                    android:text="@string/Category2"
+                    android:textColor="@color/colorTextWithoutAction"/>
             </LinearLayout>
 
             <LinearLayout
@@ -90,7 +92,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_above="@+id/button4"
                 android:layout_alignStart="@+id/button4"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorButtonWithoutAction">
 
                 <ImageView
                     android:layout_width="@dimen/size_icon"
@@ -105,7 +108,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/between_icon_category"
                     android:layout_marginTop="@dimen/top_category"
-                    android:text="@string/Category3" />
+                    android:text="@string/Category3"
+                    android:textColor="@color/colorTextWithoutAction"/>
             </LinearLayout>
 
             <LinearLayout
@@ -115,7 +119,8 @@
                 style="@style/MainButton.background"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="60dp">
+                android:layout_marginBottom="60dp"
+                android:background="@color/colorButtonWithoutAction">
 
 
                 <TextView
@@ -124,7 +129,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="88dp"
                     android:layout_marginTop="@dimen/top_category"
-                    android:text="@string/SeeAll" />
+                    android:text="@string/SeeAll"
+                    android:textColor="@color/colorTextWithoutAction"/>
 
             </LinearLayout>
         </RelativeLayout>
@@ -144,6 +150,8 @@
             android:layout_height="@dimen/button_hight"
             android:layout_marginBottom="20dp"
             android:text="@string/Continue"
+            android:textColor="@color/colorTextWithoutAction"
+            android:background="@color/colorButtonWithoutAction"
             />
 
         <Button
@@ -151,7 +159,6 @@
             style="@style/MainButton.background"
             android:layout_width="@dimen/button_weight"
             android:layout_height="@dimen/button_hight"
-
             android:text="@string/Start_new"
             />
         </LinearLayout>
