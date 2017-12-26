@@ -492,15 +492,7 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
                     questName.setText("Other Point");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questInfoTextView.setText(R.string.Lviv_Chocolate_manufacture);
                 }
                 else if ("point3".equals(title)) {
                     removeMarkers();
