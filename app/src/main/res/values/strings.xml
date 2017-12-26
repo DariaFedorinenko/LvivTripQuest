@@ -36,6 +36,39 @@
     <string name="title">Title</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="_2.2km">2.2 km</string>
-    <string name="Lviv_Chocolate_manufacture">Since Medieval Times Lviv has been well known for its "delicious confectionery" and starting from the ХІХ century Europe began exporting chocolate from Lviv. It wasn’t due to the best cocoa beans or some state-of-the-art technologies. The secret was in adding to a single sweet, a single bar of real chocolate a small, but very sweet, piece of their home city!</string>
-
+    <string name="Lviv_Chocolate_manufacture_info">Since Medieval Times Lviv has been well known for its "delicious confectionery" and starting from the ХІХ century Europe began exporting chocolate from Lviv. It wasn’t due to the best cocoa beans or some state-of-the-art technologies. The secret was in adding to a single sweet, a single bar of real chocolate a small, but very sweet, piece of their home city!</string>
+    <string name="Lviv_Chocolate_manufacture_header">Lviv Chocolate manufacture:</string>
+    <string name="Gas_lamp_header">Pub-museum "Gas Lamp":</string>
+    <string name="Gas_lamp_info">Lviv brought to the world a gas lamp that later on became famous as “Viennese”. Jan Zech and Ignacy Lukasiewicz, the local pharmacists, invented it in 1853. The pub holds one of the biggest collections of gas lamps in Europe. This atmosphere of a real Lviv pub is added by explosions, flashes, smell of gas and rock music. A guide with a lit lantern will lead you up to the restaurant. </string>
+    <string name="Kryjivka_header">Kryjivka:</string>
+    <string name="Kryjivka_info">Somewhere at Rynok Square. The most visited restaurant in Europe, 1 000 000 visitors per year. It is the last hiding place of Ukrainian Insurgent Army left from the times of the World War II. Its motto is “The Fight Continues”. </string>
+    <string name="Lviv_Coffee_Mining_Manufacture_header">Lviv Coffee Mining Manufacture:</string>
+    <string name="Lviv_Coffee_Mining_Manufacture_info">Lviv coffee is born here. It is the only coffee mining where it is extracting underground of Rynok square in front of the very eyes of visitors.
+P.S. Yaroslav Stetsko proclaimed “Declaration of Ukrainian Independence” from the balcony of this building in July 30, 1941.</string>
+    <string name="House_of_Legends_header">House of Legends:</string>
+    <string name="House_of_Legends_info">A restaurant in your imagination only. It is a building of a chimney sweeper and his family where Lviv legends live.
+The chimney sweeper and his family members collect books about Lviv in their library, protect Lviv lions, watch the water level of the Poltva river and tally if someone has not stolen some old Austrian cobblestone.It is the place where Lviv time is officially protected: the clock hand must not run slow and the clock must keep perfect Lviv time.
+There is a necessity to clean some chimneys from time to time, so the chimney sweeper takes his car, parked on the rooftop, and passes easily Lviv traffic jams. At night, when the family falls asleep, Lviv smog protects Lviv legends from St. George Hill. </string>
+    <string name="At_the_Golden_Rose_header">"At the Golden Rose" Galician Jewish Restaurant:</string>
+    <string name="At_the_Golden_Rose_info">Galician and Jewish restaurant is located in Lviv historic Jewish quarter near the ruins of the “Golden Rose” synagogue. Visitors are met with Jewish customs here.
+The menu is without prices and the cost of the dishes depends on customer’s skills to bargain. </string>>
+    <string name="Masoch_cafe_header">Masoch-cafe:</string>
+    <string name="Masoch_cafe_info">Leopold von Sacher-Masoch, a famous erotic writer, was born in Lviv. Needless to say more suggestive and lascivious, all in Masoch-cafe.</string>
+    <string name="Opera_Underground_header">"Opera Underground" restaurant:</string>
+    <string name="Opera_Underground_info">The underground of Lviv Opera House has always had its own life. If there is a performance on the upper stage, at intermissions the show continues underground. The restaurant displays memorabilia from the Opera House.</string>
+    <string name="Meat_and_Justice_header">The First Lviv Grill Restaurant of Meat and Justice:</string>
+    <string name="Meat_and_Justice_info">An executioner was, in fact, the first municipal employee in Lviv. He was a public and peculiar personality. If the executioner died, the next person to be executed was spared. He had several duties aside executions and tortures: garbage removal, and protection of city prostitutes. When a constitutional state arrived, the executioner had to look for another job and opened his own meat restaurant because who better knows more about meat than a meat expert?</string>
+    <string name="Kryva_lypa_header">Kryva Lypa restaurant</string>
+    <string name="Kryva_lypa_info">One of the best restaurant. Only GMO free food</string>
+    <string name="Zenyk_MYTNYK_header">Zenyk MYTNYK:</string>
+    <string name="Zenyk_MYTNYK_info">An eclectic pub near the old Customs as inside artifacts testify it. The main hero here is a retired custom officer who treats with good beer and tasty pancakes. The pub turns into a party place in the evening.</string>
+    <string name="Salo_header">Salo:</string>
+    <string name="Salo_info">"Salo" is the world\'s first museum restaurant of salo (fatback), this is irony and mockery of glamor!
+"Salo" is a vodka lounge bar where you can taste the salo-art kitchen, buy any of 35 kinds of salo, and pour it in with is one of 40 kinds of vodka.
+"Salo" is a unique art project which exhibits works by contemporary artists on salo, the largest in the world "The Heart of Salo," which is in the book of records of Ukraine. "Salo"is a stage for acoustic concerts of famous musicians and bands from around the world. "Salo" is a boutique with unique souvenirs of author\'s work.</string>
+    <string name="Post_office_header">Post office on Drukarska Street:</string>
+    <string name="Post_office_info">The last functioning analogue post office in Lviv. Sms and e-mail have to transform into pasta restaurant in the modern world.
+The biggest collection of Lviv postcards is displayed here as one of the ways to record the city history.</string>
+    <string name="Arsenal_header">Arsenal. Ribs and spirits:</string>
+    <string name="Arsenal_info">Pork ribs and more</string>
 </resources>

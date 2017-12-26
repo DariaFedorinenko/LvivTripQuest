@@ -477,8 +477,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 1");
-                    questInfoTextView.setText("Some Info");
+                    questName.setText(R.string.Lviv_Chocolate_manufacture_header);
+                    questInfoTextView.setText(R.string.Lviv_Chocolate_manufacture_info);
 
                 } else if ("point2".equals(title)) {
                     removeMarkers();
@@ -491,8 +491,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Other Point");
-                    questInfoTextView.setText(R.string.Lviv_Chocolate_manufacture);
+                    questName.setText(R.string.Gas_lamp_header);
+                    questInfoTextView.setText(R.string.Gas_lamp_info);
                 }
                 else if ("point3".equals(title)) {
                     removeMarkers();
@@ -505,16 +505,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 3");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questName.setText(R.string.Kryjivka_header);
+                    questInfoTextView.setText(R.string.Kryjivka_info);
                 }else if ("point4".equals(title)) {
                     removeMarkers();
                     drawMarkers();
@@ -526,16 +518,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 4");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questName.setText(R.string.Lviv_Coffee_Mining_Manufacture_header);
+                    questInfoTextView.setText(R.string.Lviv_Coffee_Mining_Manufacture_info);
                 }else if ("point5".equals(title)) {
                     removeMarkers();
                     drawMarkers();
@@ -547,16 +531,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 5");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questName.setText(R.string.House_of_Legends_header);
+                    questInfoTextView.setText(R.string.House_of_Legends_info);
                 }else if ("point6".equals(title)) {
                     removeMarkers();
                     drawMarkers();
@@ -568,16 +544,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 6");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questName.setText(R.string.At_the_Golden_Rose_header);
+                    questInfoTextView.setText(R.string.At_the_Golden_Rose_info);
                 }else if ("point7".equals(title)) {
                     removeMarkers();
                     drawMarkers();
@@ -589,16 +557,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 7");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questName.setText(R.string.Masoch_cafe_header);
+                    questInfoTextView.setText(R.string.Masoch_cafe_info);
                 }else if ("point8".equals(title)) {
                     removeMarkers();
                     drawMarkers();
@@ -610,16 +570,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 8");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questName.setText(R.string.Opera_Underground_header);
+                    questInfoTextView.setText(R.string.Opera_Underground_info);
                 }else if ("point9".equals(title)) {
                     removeMarkers();
                     drawMarkers();
@@ -631,16 +583,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 9");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questName.setText(R.string.Meat_and_Justice_header);
+                    questInfoTextView.setText(R.string.Meat_and_Justice_info);
                 }else if ("point10".equals(title)) {
                     removeMarkers();
                     drawMarkers();
@@ -652,16 +596,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 10");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questName.setText(R.string.Kryva_lypa_header);
+                    questInfoTextView.setText(R.string.Kryva_lypa_info);
                 }else if ("point11".equals(title)) {
                     removeMarkers();
                     drawMarkers();
@@ -673,16 +609,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 11");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questName.setText(R.string.Zenyk_MYTNYK_header);
+                    questInfoTextView.setText(R.string.Zenyk_MYTNYK_info);
                 }else if ("point12".equals(title)) {
                     removeMarkers();
                     drawMarkers();
@@ -694,16 +622,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 12");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questName.setText(R.string.Salo_header);
+                    questInfoTextView.setText(R.string.Salo_info);
                 }else if ("point13".equals(title)) {
                     removeMarkers();
                     drawMarkers();
@@ -715,16 +635,8 @@ public class QuestScreen extends AppCompatActivity implements OnMapReadyCallback
                             .anchor(0.5f, 0.5f)
                             .zIndex(1000)
                             .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(touchedMarker))));
-                    questName.setText("Point 13");
-                    questInfoTextView.setText("Some other Inhgfgfghgffffffffgggggggggggf" +
-                            "gfhhhhhhhhhhhhhhhhhhhh" +
-                            "gffffffffffffffffffffffff" +
-                            "ghhhhhhhhhhhhhhhhhhhhh" +
-                            "ghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gghhhhhhhhhhhhhhhhhhhhhhh" +
-                            "gfffffffffffffffffffffffffffh" +
-                            "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" +
-                            "bgffffffffffffffffffffffffffffffffffhcfghfghfghncfgnchgvnfcghngvnfo");
+                    questName.setText(R.string.Post_office_header);
+                    questInfoTextView.setText(R.string.Post_office_info);
                 }
 
 
